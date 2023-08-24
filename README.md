@@ -2,8 +2,6 @@
 
 This project fine-tune torchvision pretrained weights to classify MNIST images and try to run Pytorch model with Rust
 
-![sample](./assets/sample.jpg "sample")
-
 ## Environments
 
 - Python 3.8.10
@@ -27,18 +25,14 @@ bash scripts/download_data.sh
 
 ## Config
 
-List all datafolder in `./cfg/config.yaml`
-
-Modify class names in `./cfg/classs.names`
-
-Modify config in `./cfg/config.yaml` or create your own `.yaml` config file with the same format.
+Modify config in `./configs/config.py`
 
 ## Train
 
 Simply run 
 
 ``` bash
-python tools/train.py --cfg ./cfg/config.yaml
+python tools/pytorch/train.py
 ```
 
 ## Experiment Results
@@ -47,27 +41,23 @@ Some experiment results
 
 | Model | Accuracy | Confusion Matrix | Pretrained | Model size |
 | --- | :---: | :---: | :---: | :---: |
-| **Resnet18** | 100.00% (In train set) | ![CM1](./assets/resnet18_confusion_matrix.jpg "CM1 Image") | [Model](https://bit.ly/45LcotQ) (Private) | 44.70MB |
+| **Resnet18** | 99.64% | ![CM1](./assets/resnet18_confusion_matrix.jpg "CM1 Image") | [Model](https://bit.ly/3E5HxM5) | 44.71MB |
 
-You can download weight file above and put in `weights` folder and run inference with app
-
-``` bash
-uvicorn tools.app:app --host 127.0.0.1 --port 12345
-```
+You can download weight file above
 
 ## Infer
 
 You can infer with
 
 ``` bash
-python tools/infer.py --cfg ./cfg/config.yaml
+python tools/pytorch/infer.py
 ```
 
-## Convert to other format
+## Inference on other format
 
-### ONNX
+### Rust
 
-Refer [here](./onnx/README.md)
+Refer [here](./rust/README.md)
 
 ## Some inference results
 
@@ -75,4 +65,4 @@ You can try on your own :wink:
 
 ## Reference
 
-- [PD-Mera/Document-Checker](https://github.com/PD-Mera/Document-Checker)
+- [tch-rs](https://github.com/LaurentMazare/tch-rs)
