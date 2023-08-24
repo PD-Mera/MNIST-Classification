@@ -1,0 +1,12 @@
+albumentations
+# fastapi
+# onnx
+# onnxruntime-gpu
+opencv-python
+pillow
+python-multipart
+seaborn # to draw confusion matrix
+torch>=1.13.1
+torchvision>=0.14.1
+tqdm @ git+https://github.com/PD-Mera/tqdm
+uvicorn
